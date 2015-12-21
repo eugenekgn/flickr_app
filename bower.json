@@ -1,0 +1,17 @@
+{
+  "name": "flickr_app",
+  "authors": [
+    "Eugene Kagan <eugenekgn@gmail.com>"
+  ],
+  "description": "Flickr pagination app with material design",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4",
+    "angular-bootstrap": "~0.14.3"
+  }
+}

@@ -1,0 +1,29 @@
+<div class="container">
+    <nav ng-if="imageDashboardDisplayCtrl.pagination.totalPages > 1">
+        <ul class="pager">
+            <li class="previous"
+                ng-class="{disabled: imageDashboardDisplayCtrl.pagination.page <= 1}"
+                ng-click="imageDashboardDisplayCtrl.prevPage()">
+                <a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
+            <li><span>Page {{imageDashboardDisplayCtrl.pagination.page }} of {{ imageDashboardDisplayCtrl.pagination.totalPages }}</span>
+            </li>
+            <li class="next"
+                ng-class="{disabled: imageDashboardDisplayCtrl.pagination.page === imageDashboardDisplayCtrl.pagination.totalPages}"
+                ng-click="imageDashboardDisplayCtrl.nextPage()">
+                <a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+    </nav>
+    <div class="row">
+        <div class="col-xs-6 col-md-3" ng-repeat="photo in imageDashboardDisplayCtrl.photos">
+            <a class="thumbnail" ng-click="imageDashboardDisplayCtrl.overlayPhoto(photo)">
+                <img style="height: 180px; width: 100%; display: block;"
+                     src="http://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg"
+                     alt="{{photo.title}}"
+                     data-holder-rendered="true">
+                <div class="caption">
+                    <p class="img-text">{{photo.title}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
